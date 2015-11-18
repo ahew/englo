@@ -4,6 +4,5 @@
 /englo-entando-components/plugins/entando-plugin-jptrello/target/
 /englo-entando-components/plugins/entando-plugin-jpjenkins/target/
 /englo-entando-components/plugins/entando-plugin-jpenglo/target/
-englo-portal/target/*
-englo-portal/derby.log
-englo-portal/derby.log
+/englo-portal/target/*
+/englo-portal/derby.log
