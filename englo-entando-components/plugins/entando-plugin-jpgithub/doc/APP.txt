@@ -1,0 +1,6 @@
+EntandoHub application
+
+Client ID
+    605595b77b1c542625d7
+Client Secret
+    b59c321d8090f86feb7e27284013a58443df793d

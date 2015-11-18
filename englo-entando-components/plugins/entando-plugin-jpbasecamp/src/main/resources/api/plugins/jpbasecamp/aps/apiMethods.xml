@@ -1,0 +1,177 @@
+<apiMethodDefinitions>
+
+	<!-- projects // start  -->
+
+	<resource name="projects">
+		<description>Return the projects list</description>
+		<source pluginCode="jpbasecamp">plugins</source>
+		<method httpMethod="GET" active="true" canSpawnOthers="false" requiredAuth="true" requiredPermission="jpbasecamp_manager">
+			<description>Return the projects list</description>
+			<springBean name="jpbasecampApiInterface" method="getProjectsForApi" />
+			<responseClass>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.ProjectListResponse</responseClass>
+			<parameters>
+				<parameter key="text" required="false">
+					<description>Restrict search to projects having the given text in name or description</description>
+				</parameter>
+			</parameters>
+		</method>
+	</resource>
+
+	<resource name="project">
+		<description>The project detail</description>
+		<source pluginCode="jpbasecamp">plugins</source>
+		<method httpMethod="GET" active="true" canSpawnOthers="true" requiredAuth="true" requiredPermission="jpbasecamp_manager">
+			<description>Return a project by id</description>
+			<springBean name="jpbasecampApiInterface" method="getProjectForApi" />
+			<responseClass>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.ProjectResponse</responseClass>
+			<parameters>
+				<parameter key="id" required="true">
+					<description>The id of the project to return</description>
+				</parameter>
+			</parameters>
+		</method>
+		<method httpMethod="POST" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager">
+			<description>Add a new project</description>
+			<springBean name="jpbasecampApiInterface" method="addProjectForApi" />
+			<expectedType>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.model.JAXBProject</expectedType>
+		</method>
+		<method httpMethod="PUT" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager">
+			<description>Update a project</description>
+			<springBean name="jpbasecampApiInterface" method="updateProjectForApi" />
+			<expectedType>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.model.JAXBProject</expectedType>
+		</method>
+		<method httpMethod="DELETE" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager">
+			<description>Delete a project by id</description>
+			<springBean name="jpbasecampApiInterface" method="deleteProjectForApi" />
+			<parameters>
+				<parameter key="id" required="true">
+					<description>The id of the project to delete</description>
+				</parameter>
+			</parameters>
+		</method>
+	</resource>
+
+	<!-- projects // end  -->
+	
+	<!-- Todolist // start  -->
+
+	<resource name="todolists">
+		<description>Return the projects list</description>
+		<source pluginCode="jpbasecamp">plugins</source>
+<!-- 		<method httpMethod="GET" active="true" canSpawnOthers="false" requiredAuth="true" requiredPermission="jpbasecamp_manager"> -->
+		<method httpMethod="GET" active="true" canSpawnOthers="false" >
+			<description>Return the todolists of the desired projects</description>
+			<springBean name="jpbasecampApiInterface" method="getTodolistsForApi" />
+			<responseClass>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.TodolistListResponse</responseClass>
+			<parameters>
+				<parameter key="pid" required="true">
+					<description>Project ID</description>
+				</parameter>
+				<parameter key="text" required="false">
+					<description>Restrict search to Todolist having the given text in name or description</description>
+				</parameter>
+			</parameters>
+		</method>
+	</resource>
+	
+	<resource name="todolist">
+		<description>The project detail</description>
+		<source pluginCode="jpbasecamp">plugins</source>
+		
+		<!-- 
+		<method httpMethod="GET" active="true" canSpawnOthers="true" requiredAuth="true" requiredPermission="jpbasecamp_manager">
+		 -->
+		<method httpMethod="GET" active="true" canSpawnOthers="true" >
+			<description>Return the todolist details, given the project id</description>
+			<springBean name="jpbasecampApiInterface" method="getTodolistForApi" />
+			<responseClass>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.TodolistResponse</responseClass>
+			<parameters>
+				<parameter key="pid" required="true">
+					<description>The id of the project to select</description>
+				</parameter>
+				<parameter key="id" required="true">
+					<description>The id of the todolist to return</description>
+				</parameter>
+			</parameters>
+		</method>
+<!-- 		<method httpMethod="POST" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager"> -->
+		<method httpMethod="POST" active="true">
+			<description>Add a new todolist</description>
+			<springBean name="jpbasecampApiInterface" method="addTodolistForApi" />
+			<expectedType>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.model.JAXBTodolist</expectedType>
+		</method>
+<!-- 		<method httpMethod="PUT" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager"> -->
+		<method httpMethod="PUT" active="true">
+			<description>Update a todolist</description>
+			<springBean name="jpbasecampApiInterface" method="updateTodolistForApi" />
+			<expectedType>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.model.JAXBTodolist</expectedType>
+		</method>
+<!-- 		<method httpMethod="DELETE" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager"> -->
+		<method httpMethod="DELETE" active="true">
+			<description>Delete a Todolist by id</description>
+			<springBean name="jpbasecampApiInterface" method="deleteTodolistForApi" />
+			<parameters>
+				<parameter key="pid" required="true">
+					<description>The id of the project to select</description>
+				</parameter>
+				<parameter key="id" required="true">
+					<description>The id of the Todolist to delete</description>
+				</parameter>
+			</parameters>
+		</method>
+	</resource>
+
+<!-- Todolist // end  -->
+
+<!-- Todo // end -->
+
+	<resource name="todo">
+		<description>The project detail</description>
+		<source pluginCode="jpbasecamp">plugins</source>
+		
+		<!-- 
+		<method httpMethod="GET" active="true" canSpawnOthers="true" requiredAuth="true" requiredPermission="jpbasecamp_manager">
+		 -->
+		<method httpMethod="GET" active="true" canSpawnOthers="true" >
+			<description>Return the todo details, given the project id and the todolist id </description>
+			<springBean name="jpbasecampApiInterface" method="getTodoForApi" />
+			<responseClass>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.TodoResponse</responseClass>
+			<parameters>
+				<parameter key="pid" required="true">
+					<description>The id of the project to select</description>
+				</parameter>
+				<parameter key="id" required="true">
+					<description>The id of the todo to return</description>
+				</parameter>
+			</parameters>
+		</method>
+<!-- 		<method httpMethod="POST" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager"> -->
+		<method httpMethod="POST" active="true">
+			<description>Add a new todo</description>
+			<springBean name="jpbasecampApiInterface" method="addTodoForApi" />
+			<expectedType>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.model.JAXBTodo</expectedType>
+		</method>
+<!-- 		<method httpMethod="PUT" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager"> -->
+		<method httpMethod="PUT" active="true">
+			<description>Update a todo</description>
+			<springBean name="jpbasecampApiInterface" method="updateTodoForApi" />
+			<expectedType>org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.model.JAXBTodo</expectedType>
+		</method>
+<!-- 		<method httpMethod="DELETE" active="true" requiredAuth="true" requiredPermission="jpbasecamp_manager"> -->
+		<method httpMethod="DELETE" active="true">
+			<description>Delete a Todo by id</description>
+			<springBean name="jpbasecampApiInterface" method="deleteTodoForApi" />
+			<parameters>
+				<parameter key="pid" required="true">
+					<description>The id of the project to select</description>
+				</parameter>
+				<parameter key="id" required="true">
+					<description>The id of the Todo to delete</description>
+				</parameter>
+			</parameters>
+		</method>
+	</resource>
+	
+	<!-- Todo // end -->
+
+</apiMethodDefinitions>

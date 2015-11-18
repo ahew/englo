@@ -1,0 +1,2 @@
+INSERT INTO jpcollaboration_idea (id, title, descr, pubdate, username, status, instancecode, votepositive, votenegative) VALUES ('140', 'Alberto in pineta', 'Alberto test', '2015-10-12 09:47:23', 'admin', 3, 'Basecamp', 0, 0);
+INSERT INTO jpcollaboration_idea (id, title, descr, pubdate, username, status, instancecode, votepositive, votenegative) VALUES ('146', 'Aggiornamento librerie', 'Sarebbe meglio avere CXF 4.0', '2015-10-12 15:04:20', 'admin', 3, 'Basecamp', 2, 0);

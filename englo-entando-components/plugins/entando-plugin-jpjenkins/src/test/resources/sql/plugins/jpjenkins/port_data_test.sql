@@ -1,0 +1,2 @@
+INSERT INTO sysconfig (version, item, descr, config) VALUES ('test', 'jpjenkins_config', 'Jenkins service configuration',
+'<?xml version="1.0" encoding="UTF-8"?><config><password>PASSWORD</password><username>USERNAME</username><token>TOKEN</token><url>URL</url></config>');

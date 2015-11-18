@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+<!--    <definition extends="layout.default" name="jptrello.admin.Params.list">
+        <put-attribute name="title" value="jptrello.title.paramsManagement" />
+        <put-attribute name="body" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/params/params-list.jsp" />
+        <put-attribute name="extraResources" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/common/layouts/assets-more/params-list-extras.jsp"/>
+    </definition>
+    <definition extends="layout.default" name="jptrello.admin.Params.entry">
+        <put-attribute name="title" value="jptrello.title.paramsManagement" />
+        <put-attribute name="body" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/params/params-entry.jsp" />
+        <put-attribute name="extraResources" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/common/layouts/assets-more/params-entry-extras.jsp"/>
+    </definition>
+    <definition extends="layout.default" name="jptrello.admin.Params.trash">
+        <put-attribute name="title" value="jptrello.title.paramsManagement" />
+        <put-attribute name="body" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/params/params-trash.jsp" />
+        <put-attribute name="extraResources" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/common/layouts/assets-more/params-trash-extras.jsp"/>
+    </definition>
+
+    <definition extends="layout.default" name="jptrello.admin.page.widget.Params.entry">
+        <put-attribute name="title" value="jptrello.title.paramsManagement" />
+        <put-attribute name="body" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/portal/specialwidget/params/params-config.jsp" />
+    </definition>-->
+        
+        
+    <!-- START - Trello configuration -->
+    <definition extends="layout.default" name="jptrello.admin.Config.entry">
+        <put-attribute name="title" value="title.trello.config" />
+        <put-attribute name="body" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/config/entryConfig.jsp" />
+    </definition>
+    <definition extends="layout.default" name="jptrello.admin.Config.savedConfirmation">
+        <put-attribute name="title" value="title.trello.config" />
+        <put-attribute name="body" value="/WEB-INF/plugins/jptrello/apsadmin/jsp/config/savedConfirmation.jsp" />
+    </definition>
+    <!-- END - Trello configuration -->
+        
+
+</tiles-definitions>
+
+

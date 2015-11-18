@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Front actions -->
+	
+	<bean id="jpbasecampProjectFinderFrontEndAction" scope="prototype"
+			class="org.entando.entando.plugins.jpbasecamp.aps.internalservlet.project.ProjectFinderFrontAction"
+			parent="abstractBaseAction">
+		<property name="projectManager" ref="jpbasecampProjectManager" />
+	</bean>
+	
+	<bean id="jpbasecampAbstractFrontEndAction" scope="prototype"
+			class="org.entando.entando.plugins.jpbasecamp.aps.internalservlet.project.AbstractBasecampFrontAction"
+			parent="abstractBaseAction">
+		<property name="projectManager" ref="jpbasecampProjectManager" />
+		<property name="documentManager" ref="jpbasecampDocumentManager" />
+		<property name="todolistManager" ref="jpbasecampTodolistManager" />
+		<property name="attachmentManager" ref="jpbasecampAttachmentManager" />
+		<property name="peopleManager" ref="jpbasecampPeopleManager" />
+		<property name="pageManager" ref="PageManager"/>
+		<property name="urlManager" ref="URLManager"/>
+	</bean>
+	
+	<bean id="jpbasecampProjectFrontAction" scope="prototype"
+		class="org.entando.entando.plugins.jpbasecamp.aps.internalservlet.project.ProjectFrontAction"
+		parent="jpbasecampAbstractFrontEndAction">
+            <property name="storageManager" ref="StorageManager"/>
+            <property name="resourceManager" ref="jacmsResourceManager"/>
+	</bean>
+	
+	<bean id="jpbasecampTodolistFrontAction" scope="prototype"
+		class="org.entando.entando.plugins.jpbasecamp.aps.internalservlet.project.TodolistsFrontAction"
+		parent="jpbasecampAbstractFrontEndAction">
+	</bean>
+
+</beans>

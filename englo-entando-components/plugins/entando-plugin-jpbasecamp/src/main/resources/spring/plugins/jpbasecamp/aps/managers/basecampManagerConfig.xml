@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<bean id="jpbasecampIndexerManager" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.indexer.BasecampIndexerManager"
+		parent="abstractService">
+		<property name="serviceid"><value>basecamp</value></property>
+		<property name="indexerManager" ref="jpoauth2IndexerManager" />
+	</bean>
+
+<!-- engine managers // start -->
+
+	<bean id="jpbasecampManager" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.BasecampManager"
+		parent="abstractService">
+		<property name="configManager" ref="BaseConfigManager"/>
+	</bean>
+
+	<bean id="jpbasecampProjectManager" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.ProjectManager"
+		parent="abstractService">
+	</bean>
+	
+	<bean id="jpbasecampDocumentManager" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.DocumentManager"
+		parent="abstractService">
+	</bean>
+	
+	<bean id="jpbasecampAttachmentManager" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.AttachmentManager"
+		parent="abstractService">
+	</bean>
+	
+	<bean id="jpbasecampTodolistManager" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.TodolistManager"
+		parent="abstractService">
+	</bean>
+
+	<bean id="jpbasecampPeopleManager" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.PeopleManager"
+		parent="abstractService">
+	</bean>
+
+	<!-- engine managers // end -->
+
+	<bean id="jpbasecampApiInterface" 
+		class="org.entando.entando.plugins.jpbasecamp.aps.system.services.basecamp.api.BasecampApiInterface">
+		<property name="projectManager" ref="jpbasecampProjectManager"/>
+		<property name="todolistManager" ref="jpbasecampTodolistManager"/>
+		<property name="peopleManager" ref="jpbasecampPeopleManager"/>
+	</bean>
+
+</beans>

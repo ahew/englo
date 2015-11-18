@@ -1,0 +1,14 @@
+<shortcut-def>
+    <shortcuts>
+        <shortcut id="jptrello.Params.shortCut" requiredPermission="superuser" menusection="plugins" source="jptrello">
+            <description key="jptrello.Params.shortCut.list.shortDesc">Params list</description>
+            <longdesc key="jptrello.Params.shortCut.list.longDesc">
+                <![CDATA[Params shortCut longDesc ]]>
+            </longdesc>
+            <url>
+                <param name="namespace">/do/jptrello/Params</param>
+                <param name="actionName">list</param>
+            </url>
+        </shortcut>
+    </shortcuts>
+</shortcut-def>

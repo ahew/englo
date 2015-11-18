@@ -1,0 +1,27 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<field name="userProject.project.name">
+		<field-validator type="requiredstring">
+			<message key="requiredstring" />
+		</field-validator>
+	</field>
+	<field name="userProject.project.description">
+		<field-validator type="requiredstring">
+			<message key="requiredstring" />
+		</field-validator>
+	</field>
+	<field name="strutsAction">
+		<field-validator type="required" short-circuit="true">
+			<message key="requiredstring" />
+		</field-validator>
+		<field-validator type="fieldexpression" short-circuit="true">
+			<param name="expression"><![CDATA[(strutsAction == 1 || strutsAction == 2)]]></param>
+			<message key="requiredstring" />
+		</field-validator>
+	</field>
+
+</validators>

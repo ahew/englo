@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <package name="jpbasecamp_do/jpbasecamp/FrontEnd/Login" namespace="/do/jpbasecamp/FrontEnd/Login" extends="entando-front-default">
+	
+        <action name="intro" class="jpbasecampProjectFinderFrontEndAction">
+            <result type="dispatcher">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/login/login.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+	
+    </package>
+
+    <package name="jpbasecamp_do/jpbasecamp/FrontEnd/Project" namespace="/do/jpbasecamp/FrontEnd/Project" extends="entando-front-default">
+
+        <global-results>
+            <result name="failure">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-error.jsp</result>
+        </global-results>
+
+        <action name="list" class="jpbasecampProjectFinderFrontEndAction">
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-project_list</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-list.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+
+        <action name="search" class="jpbasecampProjectFinderFrontEndAction">
+            <result type="dispatcher">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-list.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+		
+			
+        <!-- project management // start -->
+		
+        <action name="new" class="jpbasecampProjectFrontAction" method="newProject">
+            <result type="dispatcher">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-view.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+		
+        <action name="save" class="jpbasecampProjectFrontAction" method="save">
+            <result name="input" type="dispatcher">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-view.jsp</result>
+            <result type="frontRedirectAction">
+                <param name="actionName">view</param>
+                <param name="pid">${pid}</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="edit" class="jpbasecampProjectFrontAction" method="edit">
+            <result name="input" type="frontRedirectAction">
+                <param name="actionName">list</param>
+            </result>
+            <result type="dispatcher">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-entry.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="view" class="jpbasecampProjectFrontAction" method="view">
+            <result name="input" type="frontRedirectAction">
+                <param name="actionName">list</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-view.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="trash" class="jpbasecampProjectFrontAction" method="trash">
+            <result name="input" type="frontRedirectAction">
+                <param name="actionName">view</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-trash.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="delete" class="jpbasecampProjectFrontAction" method="delete">
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-trash.jsp</param>
+            </result>
+            <result type="frontRedirectAction">
+                <param name="actionName">list</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+        
+        <action name="document" class="jpbasecampProjectFrontAction" method="document" >
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_document</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-documents.jsp</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-project_document</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-documents.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+        
+        <action name="documentTrash*" class="jpbasecampProjectFrontAction" method="documentTrash" >
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_document_nonce</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-documents.jsp</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-project_document_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-document-trash.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+        
+        <action name="documentDelete*" class="jpbasecampProjectFrontAction" method="documentDelete" >
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_document_delete_nonce</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-document-trash.jsp</param>
+            </result>
+            <result type="frontRedirectAction">
+                <param name="actionName">document</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+        
+        <action name="doUpload" class="jpbasecampProjectFrontAction" method="upload">
+            <result name="input" type="dispatcher">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-project-view.jsp</result>
+            <result type="frontRedirectAction">
+                <param name="actionName">document</param>
+            </result>
+            <!--maximun Size = 10 Mb-->
+            <interceptor-ref name="fileUpload"><param name="maximumSize">10485760</param></interceptor-ref> 
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <!-- project management // end -->
+		
+		
+        <action name="todolistView" class="jpbasecampTodolistFrontAction" method="todolistView">
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-todolist</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="updateTodolist" class="jpbasecampTodolistFrontAction" method="updateTodolist">
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+<!-- 			<result type="guiFragment"> -->
+<!-- 				<param name="code">basecamp-widget-todolist</param> -->
+<!-- 				<param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param> -->
+<!-- 			</result> -->
+            <result type="frontRedirectAction">
+                <param name="actionName">view</param>
+                <param name="pid">${pid}</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="updateTodo" class="jpbasecampTodolistFrontAction" method="updateTodo">
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-todolist</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="deleteTodolist" class="jpbasecampTodolistFrontAction" method="deleteTodolist">
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-todolist</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+		
+        <action name="deleteTodo" class="jpbasecampTodolistFrontAction" method="deleteTodo">
+            <result name="input" type="guiFragment">
+                <param name="code">basecamp-widget-project_trash</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <result type="guiFragment">
+                <param name="code">basecamp-widget-todolist</param>
+                <param name="jspLocation">/WEB-INF/plugins/jpbasecamp/aps/jsp/internalservlet/project/frontend-todolist-view.jsp</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+            </interceptor-ref>
+        </action>
+
+    </package>
+
+</struts>

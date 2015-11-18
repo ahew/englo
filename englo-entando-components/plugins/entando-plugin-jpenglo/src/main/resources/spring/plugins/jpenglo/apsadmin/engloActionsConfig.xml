@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:context="http://www.springframework.org/schema/context"
+                xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
+
+        <!-- Front actions // overrides github project actions by extending the original class -->
+	<bean id="jpgithubProjectFrontEndAction" scope="prototype"
+		class="org.entando.entando.plugins.jpgithub.aps.internalservlet.project.EngloProjectFrontAction"
+		parent="abstractBaseAction">
+		<property name="githubManager" ref="jpGithubManager" />
+                <property name="todolistManager" ref="jpengloTodolistManager" />
+                <property name="projectManager" ref="jpbasecampProjectManager"/>
+	</bean>
+        
+        <bean id="jpengloTrelloFrontEndAction" scope="prototype"
+		class="org.entando.entando.plugins.jptrello.aps.internalservlet.EngloTrelloFrontendAction"
+		parent="abstractBaseAction">
+            <property name="trelloClientManager" ref="jptrelloTrelloClientManager"/>
+            <property name="engloCardManager" ref="jpengloCardManager" />
+            <property name="engloTodolistManager" ref="jpengloTodolistManager" />
+	</bean>
+
+</beans>

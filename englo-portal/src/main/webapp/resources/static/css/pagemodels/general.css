@@ -1,0 +1,372 @@
+html, body {
+	background-color: #ffffff;
+}
+
+body {
+	padding-bottom: 1em;
+}
+
+#masthead {
+	position: relative;
+}
+
+#masthead, #main-top, #main, #footer, #closure {
+	margin: 0 auto;
+	max-width: 700px;
+	width: 93%;
+}
+
+#masthead-container {
+	padding-top: 30px;
+}
+
+#toolbar-up {
+	line-height: 1.75em;
+	font-size: 0.6875em;
+	/*padding: 0.5em 0;*/
+	vertical-align: text-top;
+}
+
+#toolbar-up .alignText {
+	/*background-color: red;*/
+	height: 30px;
+	vertical-align: top;
+	padding-top: 0.5em;
+}
+
+#toolbar-up .paddingRight {
+	padding-right: 8em;
+}
+
+#toolbar-up div.inline-block {
+	display: block;
+	padding: 0.5em auto;
+}
+
+#toolbar-up div.inline-block:nth-child(3) {
+	color: #aedd27;
+}
+
+#social {
+	padding-right: 0.25em;
+}
+
+#social a {
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+}
+
+#masthead nav {
+	background-color: #f4f5f6;
+	border: 1px solid #dadade;
+}
+
+header h1 {
+	background-image: url("../../img/logo-enterprise.png");
+	background-position: center top;
+	background-repeat: no-repeat;
+	margin: 1em auto;
+}
+
+#logo-companion {
+	text-align: center;
+}
+
+#main {
+	/*background-color: orange;*/
+	padding-top: 0.5em;
+	min-height: 450px;
+}
+
+#footer_topleft {	
+	float: left;
+	width: 50%;
+	padding: 2em 0;
+}
+
+#footer_topright {
+	margin-left: 57%;
+	padding: 2em 0;
+	text-align: right;
+}
+
+footer {
+	font-size: 0.7em;
+	/*background-color: silver;*/
+	clear: both;
+	font-weight: 700;
+	border-top: 2px solid #dadade;
+}
+
+footer img {
+	vertical-align:text-top;
+}
+
+#column_2 .login h2 {
+	width: 50%;
+}
+
+#column_2 .login input {
+    background-color: #f0f0f0;
+    margin: 4px 0;
+}
+
+.partnership_logo {
+	float: left;
+	width: 100%;
+	border-top: 1px solid #f0f0f0;
+	border-bottom: 1px solid #f0f0f0;
+	padding-bottom: 20px;
+}
+
+.partnership_logo h3 {
+	margin: 10px 0;
+	padding: 0;
+}
+
+.partnership_logo .logo_column1 {
+	width: 30%;
+	float: left;
+}
+
+.partnership_logo .logo_column2 {
+	margin-left: 35%;
+	margin-top: 20px;
+	height: 145px;
+}
+
+.partnership_logo img {
+	width: 150px;
+}
+
+/*-
+	RESPONSIVENESS
+*/
+/* Small screen! */
+@media screen and (max-device-width: 480px),
+screen and (max-width: 600px) {
+	/* iOS and Windows Mobile font-size changes make the robot cry and SMASH */
+	html {
+		-ms-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		/*background-color: yellow;*/
+	}
+
+	#masthead, #main-top, #main, #footer, #closure {
+		width: 100%;
+		margin: 0;
+	}
+	
+	#toolbar-up {
+		font-size: 0.8em;
+		padding-left: 0.5em;
+	}
+	
+	#toolbar-up div.inline-block {
+		text-align: left;
+		display: block;
+		margin: 0 0 1em 0;
+	}
+
+	#toolbar-up div.inline-block:nth-child(2) {
+		position: absolute;		
+		right: 0;
+		top: 0;		
+	}
+	
+	#toolbar-up div.inline-block:nth-child(3) {
+		text-align: center;
+		padding-right: 0;
+	}
+	
+	header h1 {
+		background-image: url("../../img/logo-enterprise.png");
+		padding: 0;
+		text-align: center;
+	}
+	
+	header h1 a {
+		padding: 50px 0 0 0;
+	}
+	
+	#footer_topleft {
+		float: none;
+		width: 95%;
+		padding: 0.5em 0;
+		margin: 0 auto;
+	}
+	
+	#footer_topright {
+		width: 95%;
+		margin: 0 auto;
+		padding: 0.5em 0;	
+	}
+
+}
+
+/* Still small! (but scaling up) */
+@media screen and (min-width: 601px) {
+
+	html {
+		/*background-color: orange;*/
+	}
+
+	#masthead, #main-top, #main, #footer, #closure {
+		margin: 0 auto;
+		max-width: none;
+		width: 90%;
+	}
+	
+	#closure {
+		margin-top: 30px;
+	}
+
+	#toolbar-up div.inline-block {
+		/*background-color: lime;*/
+		display: inline-block;
+	}
+
+	#toolbar-up div.inline-block:first-child {
+		margin-right: 0.5em;
+		/*background-color: purple;*/
+	}
+
+	header h1 {
+		clear: right;
+		background-image: url("../../img/logo-enterprise.png");
+		padding: 0;
+		/*background-color: black;*/
+		text-align: center;
+	}
+	
+	header h1 a {
+		padding: 50px 0 0 0;
+	}
+	
+	header h1 span {
+		display: block;
+		padding-top: 90px;
+		margin: 0 auto;
+	}	
+
+}
+
+/* "Desktop Small" */
+@media screen and (min-width: 800px) {
+	
+	#toolbar-up {
+		/*background-color: lime;*/
+		float: right;
+	}
+
+	#toolbar-up div.inline-block {
+		margin-right: 0.25em;
+	}
+	
+	#column_1 {
+		/*background-color: orange;*/
+		width: 25%;
+		float: left;
+	}
+	
+	#column_2 {
+		/*background-color: red;*/
+		margin-left: 26.6666667%;
+	}
+
+	#footer {
+		clear: both;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	/* 
+		SORRY!!!
+		We'll find a better solution ASAP!
+	*/
+	#social {
+		padding-right: 0;
+		right: 0; 
+	}
+
+	#toolbar-up .paddingRight {
+		padding-right: 0;
+	}
+
+}
+
+
+@media screen and (max-width: 801px) {
+	/* 
+		SORRY!!!
+		We'll find a better solution ASAP!
+	*/
+	#toolbar-up {
+		padding-right: 8em;
+	}
+	header h1 span {
+		display: block;
+		padding-top: 90px;
+		margin: 0 auto;
+	}	
+}
+
+/* "Desktop" */
+@media screen and (min-width: 1024px) {
+
+	html {
+		background-color: transparent;
+	}
+
+	#masthead, #main-top, #main, #footer, #closure {
+		width: 87.890625%;	/* 900 / 1024 */
+	}
+	
+	header h1 {
+		background-position: 0 0;
+		width: 100%;
+		float: left;
+		margin: 0;
+		text-align: left;
+		/*padding: 1em 0;*/	
+	}
+	
+	header h1 a {
+		padding: 0 0 0 200px;
+	}
+	
+	header h1 span {
+	display: inline-block;
+	height: 100px;
+	line-height: 100px;
+	padding-left: 350px;
+	padding-top: 0;
+	margin: 0;
+}
+
+
+	#logo-companion {
+		text-align: left;
+		float: right;
+
+	}
+	
+	#masthead nav {
+		clear: both;
+	}
+		
+}
+
+/* IT'S OVER 9000 */
+@media screen and (min-width: 1200px) {
+	
+	html {
+		height: 100%;
+	}
+	
+	body {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}

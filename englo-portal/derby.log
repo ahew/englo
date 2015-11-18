@@ -1,0 +1,20 @@
+----------------------------------------------------------------
+Wed Nov 18 16:59:28 CET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance a816c00e-0151-1b52-7a46-000009ca0d28 
+on database directory /Users/entando/workspace/github/englo/englo-portal/target/derby/production/engloPort  with class loader ClassRealm[plugin>org.mortbay.jetty:jetty-maven-plugin:7.6.16.v20140903, parent: sun.misc.Launcher$AppClassLoader@2f78743b] 
+Loaded from file:/Users/entando/.m2/repository/org/apache/derby/derby/10.9.1.0/derby-10.9.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+user.dir=/Users/entando/workspace/github/englo/englo-portal
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Nov 18 16:59:29 CET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.9.1.0 - (1344872): instance 856dc0f6-0151-1b52-7a46-000009ca0d28 
+on database directory /Users/entando/workspace/github/englo/englo-portal/target/derby/production/engloServ  with class loader ClassRealm[plugin>org.mortbay.jetty:jetty-maven-plugin:7.6.16.v20140903, parent: sun.misc.Launcher$AppClassLoader@2f78743b] 
+Loaded from file:/Users/entando/.m2/repository/org/apache/derby/derby/10.9.1.0/derby-10.9.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+user.dir=/Users/entando/workspace/github/englo/englo-portal
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

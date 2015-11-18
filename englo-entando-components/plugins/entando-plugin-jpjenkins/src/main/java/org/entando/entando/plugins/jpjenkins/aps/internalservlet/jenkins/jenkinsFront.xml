@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="jpjenkins_do/FrontEnd/jpjenkinsFront/Jobs" namespace="/do/FrontEnd/jpjenkins/Jobs" extends="entando-front-default">
+        
+        <action name="list" class="jpjenkinsJenkinsFrontEndAction" method="list">
+            <result type="dispatcher">/WEB-INF/plugins/jpjenkins/aps/jsp/internalservlet/jenkins/frontend-jenkins-angular-boards-list.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="jsoninfo" class="jpjenkinsJenkinsFrontEndAction" method="jsoninfo">
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="jsoninfo.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="jsonlogs" class="jpjenkinsJenkinsFrontEndAction" method="jsonlogs">
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="jsonlogs.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+       <action name="newjob" class="jpjenkinsJenkinsFrontEndAction" method="newjob">
+            <result type="dispatcher">/WEB-INF/plugins/jpjenkins/aps/jsp/internalservlet/jenkins/frontend-jenkins-angular-boards-json.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="build" class="jpjenkinsJenkinsFrontEndAction" method="build">
+            <result type="dispatcher">/WEB-INF/plugins/jpjenkins/aps/jsp/internalservlet/jenkins/frontend-jenkins-angular-boards-json.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+       
+    </package>   
+</struts>        

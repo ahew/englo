@@ -1,0 +1,7 @@
+<project name="englo" default="WAR-build" basedir=".">
+	<description>englo - Build file</description>
+
+	<import file="buildProperties.xml"/>
+	<import file="buildTasks.xml"/>
+
+</project>

@@ -1,0 +1,158 @@
+div.message .like_pre {
+	clear: both;
+	font-family: monospace;
+	display: block;
+	border: 1px solid #e7e7e7;
+	background-color: #f0f0f0;
+	width: 98%;
+	padding: 0.5em 1%;
+	margin: 0.5em 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.message {
+	font-family: monospace;
+	display: block;
+	border: 1px solid #e7e7e7;
+	float: left;
+	width: 98%;
+	padding: 0.5em 1%;
+	margin: 0.5em 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.message_style_0 {
+	background-color: #f0f0f0;
+}
+
+.message-header,
+#main p.message-header {
+	font-family: arial, sans-serif;
+	font-weight: bold;
+	color: #000;
+	margin-bottom: 1em;
+	padding: 0.5em 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.message-footer, 
+#main p.message-footer {
+	margin: 1em 0 0 0;
+	padding: 0.5em 0;
+	border-top: 1px solid #ccc;
+	text-align: right;
+}
+
+.message-header, .message-footer {
+	background-color: rgba(0,0,0,0.05);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	float: left;
+	width: 100%;
+}
+
+.important {
+	font-weight: bold;
+}
+
+.ticket-attachments {
+}
+
+#ticket-text-message {
+	width: 95%;
+}
+
+.section-spacer {
+	margin: 2em 0;
+	float: left;
+	width: 100%;
+	clear: both;
+}
+
+.ticket-close fieldset {
+	float: left;
+	width: 90%;
+	padding: 1.5em 5%;
+	border: 1px solid rgba(150, 4, 11, 0.6);;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0.5em 0 2em 0;
+}
+.ticket-close legend {
+	text-align: right;
+	background-color: rgba(150, 4, 11, 0.6);;
+	padding: 0.25em 0.5em;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: rgba(0, 0, 0, 0.75);;
+	font-size: 0.8em;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+.ticket-close .button-big {
+	padding: 0.8em 1.2em;
+	cursor: pointer;
+}
+
+.ticket-close .button-big:hover,
+.ticket-close .button-big:active, 
+.ticket-close .button-big:focus {
+
+	background-color: rgba(150, 4, 11, 0.6);
+    border-color: rgba(150, 4, 11, 0.2) #96040b #96040b rgba(150, 4, 11, 0.4);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+		
+}
+
+.choose-button {
+	display: block;
+	margin: 0.5em 0 1em 0; 
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: transparent;
+	min-width: 150px;
+	border: 1px solid rgba(0,0,0,0.1);
+	padding: 0.4em 0.6em;
+	height: 1.5em;
+	line-height: 1.6em;
+	white-space: nowrap;
+	max-width: 90%;
+	float: left;
+	clear: both;
+}
+
+
+.choose-button input {
+	margin-right: 0px;
+	display: inline-block;
+	width: 15px;
+	vertical-align: middle;
+}
+.choose-button label {
+	display: inline-block;
+	min-width: 110px;
+	padding: 0 0.25em;
+	cursor:pointer;
+}
+
+.choose-button input[type="radio"]:checked {
+
+}
+
+.choose-button input[type="radio"]:checked ~ label {
+	background-color: rgba(150, 4, 11, 0.6);
+	color: rgba(0,0,0,0.9);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#ticket_close_note {
+	width: 90%;
+}

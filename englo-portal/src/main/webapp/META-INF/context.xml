@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context path="/englo" docBase="./englo" debug="1" reloadable="false">
+	
+	<Environment name="logName" value="englo" type="java.lang.String" override="false" />
+	<Environment name="logFilePrefix" value="/Users/entando/workspace/github/englo/englo-portal/target/log_englo" type="java.lang.String" override="false" />
+	<Environment name="logLevel" value="INFO" type="java.lang.String" override="false" />
+	<Environment name="logFileSize" value="200000" type="java.lang.String" override="false" />
+	<Environment name="logFilesCount" value="10" type="java.lang.String" override="false" />
+	
+	<Environment name="configVersion" value="production" type="java.lang.String" override="false" />
+	
+	<Environment name="applicationBaseURL" value="http://localhost:8080/englo/" type="java.lang.String" override="false" />
+	<Environment name="resourceRootURL" value="/englo/resources/" type="java.lang.String" override="false" />
+	<Environment name="protectedResourceRootURL" value="/englo/protected/" type="java.lang.String" override="false" />
+	
+	<Environment name="resourceDiskRootFolder" value="/Users/entando/workspace/github/englo/englo-portal/src/main/webapp/resources" type="java.lang.String" override="false" />
+	<Environment name="protectedResourceDiskRootFolder" value="/Users/entando/workspace/github/englo/englo-portal/src/main/webapp/protected" type="java.lang.String" override="false" />
+	
+	<Environment name="indexDiskRootFolder" value="/Users/entando/workspace/github/englo/englo-portal/target/temp/indexdir" type="java.lang.String" override="false" />
+	
+	<Resource name="jdbc/portDataSource" auth="Container" 
+		type="javax.sql.DataSource" driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+		maxActive="8" maxIdle="4" 
+		username="agile" password="agile" 
+		url="jdbc:derby:/Users/entando/workspace/github/englo/englo-portal/target/derby/production/engloPort;create=true" />
+	
+	<Resource name="jdbc/servDataSource" auth="Container" 
+		type="javax.sql.DataSource" driverClassName="org.apache.derby.jdbc.EmbeddedDriver" 
+		maxActive="8" maxIdle="4" 
+		username="agile" password="agile" 
+		url="jdbc:derby:/Users/entando/workspace/github/englo/englo-portal/target/derby/production/engloServ;create=true" />
+	
+</Context>

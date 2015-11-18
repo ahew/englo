@@ -1,0 +1,43 @@
+#column_1 .login {
+	margin: 1em 0 2em 0;
+}
+
+#column_1 .login h2, #column_1 .login span.hide {
+	display: none;	
+}
+
+#column_1 .login span.show {
+	position: relative;
+	top: 0;
+	width: 100px;
+	height: 100px;
+	overflow: visible;
+}
+
+#column_1 .login p.welcome, #column_1 .login p.logout {
+	display: inline;
+}
+
+/*#column_2 .login .button {
+	border-radius: 8px 8px 8px 8px;
+	height: 2em;
+	line-height: 2em;
+	margin-bottom: 2.5em;
+	padding: 0;
+	text-align: center;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+	width: 70px;
+}*/
+
+.login a:link, .login a:visited {
+	text-decoration: none;
+}
+
+#column_2 .login {
+	padding-top: 20px;
+	padding-left: 80px;
+}
+
+#column_2 .login h2 {
+	width: 30%;
+}

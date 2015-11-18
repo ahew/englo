@@ -1,0 +1,6 @@
+.scheda_download h2 a {
+	background-image: url("../../img/download.png");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	padding-left: 50px;
+}

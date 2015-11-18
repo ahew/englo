@@ -1,0 +1,1 @@
+INSERT INTO api_oauth_tokens (accesstoken, tokensecret, consumerkey, lastaccess, username) VALUES ('53af71d8d69ac156318f51bbc4f74f64', '2bb82994e3fdcfb68884e56b768b7031', 'smart', '2015-09-11 00:00:00', 'admin');

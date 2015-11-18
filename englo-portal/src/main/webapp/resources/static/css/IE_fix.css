@@ -1,0 +1,127 @@
+
+
+.social li.svg1, .social_share li.svg11 {
+background: url(../assets/facebook_page_eventa.png);
+}
+
+.social li.svg2, .social_share li.svg22 {
+background: url(../assets/google_plus_eventa.png);
+}
+
+.social li.svg3, .social_share li.svg33 {
+background: url(../assets/twitter_eventa.png);
+}
+
+.social li.svg4 {
+background: url(../assets/instagram_eventa.png);
+}
+
+.dz-browser-not-supported {
+background: gray !important;
+}
+
+.dz-browser-not-supported div.dz-message span {
+width: 100%; color:white;
+text-align: center; display: block; padding-top: 25px;
+}
+.dz-browser-not-supported div.dz-fallback {
+width: 100%; color:white; position:relative; top:0px;
+text-align: center; display: block;
+}
+.dz-browser-not-supported div.dz-fallback p {
+width: 100%; color:white; position:relative; top:-50px;
+text-align: center; display: block; 
+}
+
+.dz-browser-not-supported div.dz-fallback input[type="file"] {
+position:relative; top:-50px;
+}
+
+.dz-browser-not-supported div.dz-fallback input[type="submit"] {
+position:relative; top:-30px; width:80%; margin: 0 auto; display: block;
+}
+
+/* ONLY IE8 */
+
+
+html.ie8 .modal-dialog {
+display: none !important;
+}
+
+html.ie8 .eventa_dropdown {
+	display: none !important;
+}
+html.ie8 .eventa_dropdown.down_tend {
+	display: block !important;
+}
+
+html.ie8 .user_menu {
+	display: none !important;
+}
+
+html.ie8 .user_menu.down_tend {
+	display: block !important;
+}
+
+html.ie8 .lens_mini {
+	top:12px !important;
+}
+
+html.ie8 section.eventa_search form input[type="search"] {
+border:thin solid #cccccc !important;
+padding-top:15px !important;
+}
+
+html.ie8 .eventa_mask {
+background: url(../assets/background_orange_IEfix.png);	
+}
+
+html.ie8 aside.colright {
+width: 690px !important;
+}
+
+html.ie8 .fullscreen {
+background-position: center top !important;
+}
+
+html.ie8 input[type="text"].style_eventa {
+	background: url(../assets/background_black_trasp_iefix.png);	
+}
+html.ie8 input[type="text"].style_eventa:focus {
+	background: url(../assets/background_orange_IEfix.png);		
+}
+
+html.ie8 input[type="submit"].style_eventa {
+	border:none; width:250px;
+}
+
+html.ie8 .verde_acqua {
+background-position: 9px center !important;
+padding-left: 35px;
+padding-right:10px;
+}
+
+html.ie8 .crea_evento .coleft {
+width: 650px;
+}
+html.ie8 .crea_evento .colright {
+width: 300px;
+}
+
+html.ie8 .create_event_page {
+margin-bottom: 70px;
+}
+
+html.ie8 .fullscreen.login_page {
+background: url(../assets/Login_bg_sample.jpg) no-repeat center !important;
+}
+
+
+
+
+
+
+
+
+
+

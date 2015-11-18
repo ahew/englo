@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="jpenglo_do/FrontEnd/jptrelloFront/Boards" namespace="/do/FrontEnd/jptrello/Boards" extends="jptrello_do/FrontEnd/jptrelloFront/Boards">
+        
+        <action name="jsonlist" class="jpengloTrelloFrontEndAction" method="jsonlist">
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="jsonlist.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="updatecard" class="jpengloTrelloFrontEndAction" method="updatecard">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="deletecard" class="jpengloTrelloFrontEndAction" method="deletecard">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+    </package>   
+    
+</struts>        

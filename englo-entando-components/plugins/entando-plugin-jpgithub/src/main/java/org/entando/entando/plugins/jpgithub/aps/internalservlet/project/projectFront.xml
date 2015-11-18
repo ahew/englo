@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="jpgithub_do/jpgithub/FrontEnd/Login" namespace="/do/jpgithub/FrontEnd/Login" extends="entando-front-default">
+	
+		<action name="intro" class="jpgithubProjectFinderFrontEndAction">
+                    <result type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/login/login.jsp</result>
+                    <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+		</action>
+	
+	</package>
+
+	<package name="jpgithub_do/jpgithub/FrontEnd/Project" namespace="/do/jpgithub/FrontEnd/Project" extends="entando-front-default">
+
+		<global-results>
+                    <result name="failure">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/communication_error.jsp</result>
+		</global-results>
+		
+		<!-- project management // start -->
+		
+                <action name="list" class="jpgithubProjectFrontEndAction" method="list">
+                    <result type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_list.jsp</result>
+                    <interceptor-ref name="entandoFrontEndFreeStack">
+                        <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+                    </interceptor-ref>
+		</action>
+                
+		<!-- _repository -->
+		<action name="entry" class="jpgithubProjectFrontEndAction" method="entry">
+                    <result type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_entry.jsp</result>
+                    <interceptor-ref name="entandoFrontEndFreeStack">
+                        <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+                    </interceptor-ref>
+		</action>
+                
+                <action name="listPullRequest" class="jpgithubProjectFrontEndAction" method="listPullRequest">
+                    <result type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_pull_request_list.jsp</result>
+                    <interceptor-ref name="entandoFrontEndFreeStack">
+                        <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+                    </interceptor-ref>
+		</action>
+                
+                <action name="createPullRequest" class="jpgithubProjectFrontEndAction" method="createPullRequest">
+<!-- 			<result type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_pull_request_list.jsp</result>
+                       <result name="input" type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_pull_request_new.jsp</result>-->
+                    <result type="chain">listPullRequest</result>
+                    <result name="input" type="chain">newPullRequest</result>
+                    <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                        <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+                    </interceptor-ref>
+		</action>
+                
+                <action name="newPullRequest" class="jpgithubProjectFrontEndAction" method="newPullRequest">
+                    <result type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_pull_request_new.jsp</result>
+                    <result name="input" type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_pull_request_list.jsp</result>
+                    <interceptor-ref name="entandoFrontEndFreeStack">
+                        <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+                    </interceptor-ref>
+		</action>
+                
+                <action name="confirmPullRequest*" class="jpgithubProjectFrontEndAction" method="confirmPullRequest">
+                    <result type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_pull_request_confirm.jsp</result>
+                    <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                        <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+                    </interceptor-ref>
+		</action>
+                
+                <action name="mergePullRequest" class="jpgithubProjectFrontEndAction" method="mergePullRequest">
+                    <result type="chain">listPullRequest</result>
+                    <result name="input" type="dispatcher">/WEB-INF/plugins/jpgithub/aps/jsp/internalservlet/project/project_pull_request_confirm.jsp</result>
+                    <interceptor-ref name="entandoFrontEndFreeValidationStack">
+                        <param name="chain.includeParameters">fieldErrors,actionErrors,actionMessages</param>
+                    </interceptor-ref>
+		</action>
+
+    </package>
+
+</struts>

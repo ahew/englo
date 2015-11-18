@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="jptrello_do/FrontEnd/jptrelloFront/Boards" namespace="/do/FrontEnd/jptrello/Boards" extends="entando-front-default">
+                
+        <action name="list" class="jptrelloTrelloFrontEndAction" method="list">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-boards-list.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+
+        <action name="board" class="jptrelloTrelloFrontEndAction" method="board">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-boards-board.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+
+        <action name="card" class="jptrelloTrelloFrontEndAction" method="card">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-boards-card.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="create" class="jptrelloTrelloFrontEndAction" method="create">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-boards-create.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+
+        <action name="angular" class="jptrelloTrelloFrontEndAction" method="angular">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-list.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="jsonboards" class="jptrelloTrelloFrontEndAction" method="jsonboards">
+            <!-- <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result> -->
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="boards.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="jsoncards" class="jptrelloTrelloFrontEndAction" method="jsoncards">
+            <!-- <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result> -->
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="cards.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="jsonmembers" class="jptrelloTrelloFrontEndAction" method="jsonmembers">
+            <!-- <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result> -->
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="members.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="jsoncard" class="jptrelloTrelloFrontEndAction" method="jsoncard">
+            <!-- <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result> -->
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="card.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        <action name="jsoncardmember" class="jptrelloTrelloFrontEndAction" method="jsoncardmember">
+            <result type="stream">
+                <param name="contentType">application/json</param>
+                <param name="contentDisposition">inline;filename="cardmember.json"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+            <!-- <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result> -->
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+        
+        <action name="addcard" class="jptrelloTrelloFrontEndAction" method="addcard">
+            <result type="dispatcher">/WEB-INF/plugins/jptrello/aps/jsp/internalservlet/trello/frontend-trello-angular-boards-json.jsp</result>
+            <interceptor-ref name="entandoFrontEndFreeStack"></interceptor-ref>
+        </action>
+        
+    </package>   
+    
+</struts>        

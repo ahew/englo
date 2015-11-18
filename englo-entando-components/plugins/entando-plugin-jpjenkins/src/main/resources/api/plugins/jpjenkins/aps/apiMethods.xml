@@ -1,0 +1,47 @@
+<apiMethodDefinitions>
+
+    <resource name="paramss">
+        <description>Return the params list</description>
+        <source pluginCode="jpjenkins">plugins</source>
+        <method httpMethod="GET" active="true" canSpawnOthers="true">
+            <description>Return the paramss list</description>
+            <springBean name="jpjenkinsParamsManager" method="getParamssForApi" />
+            <responseClass>org.entando.entando.plugins.jpjenkins.aps.system.services.params.api.ParamsListResponse</responseClass>
+	</method>
+    </resource>
+  
+    <resource name="params">
+        <description>The params</description>
+        <source pluginCode="jpjenkins">plugins</source>
+        <method httpMethod="GET" active="true" canSpawnOthers="true">
+            <description>Return a params by id</description>
+            <springBean name="jpjenkinsParamsManager" method="getParamsForApi" />
+            <responseClass>org.entando.entando.plugins.jpjenkins.aps.system.services.params.api.ParamsResponse</responseClass>
+            <parameters>
+                <parameter key="id" required="true">
+                    <description>The id of the params to return</description>
+                </parameter>
+            </parameters>
+        </method>
+        <method httpMethod="POST" active="true" requiredAuth="true" requiredPermission="superuser">
+            <description>Add a params</description>
+            <springBean name="jpjenkinsParamsManager" method="addParamsForApi" />
+            <expectedType>org.entando.entando.plugins.jpjenkins.aps.system.services.params.api.JAXBParams</expectedType>
+        </method>
+        <method httpMethod="PUT" active="true" requiredAuth="true" requiredPermission="superuser">
+            <description>Update a params</description>
+            <springBean name="jpjenkinsParamsManager" method="updateParamsForApi" />
+            <expectedType>org.entando.entando.plugins.jpjenkins.aps.system.services.params.api.JAXBParams</expectedType>
+        </method>
+        <method httpMethod="DELETE" active="true" requiredAuth="true" requiredPermission="superuser">
+            <description>Delete a params by id</description>
+            <springBean name="jpjenkinsParamsManager" method="deleteParamsForApi" />
+            <parameters>
+                <parameter key="id" required="true">
+                    <description>The id of the params to delete</description>
+                </parameter>
+            </parameters>
+        </method>
+    </resource>
+	
+</apiMethodDefinitions>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <include file="org/entando/entando/plugins/jptrello/aps/internalservlet/trello/trelloFront.xml"/>	
+    <include file="org/entando/entando/plugins/jptrello/apsadmin/params/params.xml"/>
+    <include file="org/entando/entando/plugins/jptrello/apsadmin/portal/specialwidget/params/paramsSpecialWidget.xml"/>
+    <include file="org/entando/entando/plugins/jptrello/aps/internalservlet/params/paramsFront.xml"/>
+    
+    <include file="org/entando/entando/plugins/jptrello/apsadmin/config/trelloconfig.xml"/>
+   
+</struts>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<description><![CDATA[OAuth2 Core Tag Library]]></description>
+	<display-name>OAuth2 Core Tag Library</display-name>
+	<tlib-version>2.2</tlib-version>
+	<short-name>oa2</short-name>
+	<uri>/jpoauth2-core</uri>
+
+	<tag>
+		<description>Check whether the current user has authenticated against the given service</description>
+		<name>authentication</name>
+		<tag-class>org.entando.entando.plugins.jpoauth2.aps.tags.AuthenticatationTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description>Service to check for</description>
+			<name>service</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>Name of the parameter where to store the authentication status</description>
+			<name>var</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+</taglib>
