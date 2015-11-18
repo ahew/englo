@@ -1,13 +1,10 @@
-# englo
+# Englo - A Software Project Management and Delivery Tool.
 
-Englo project is composed by *two* parts:
+Englo is a **prototype** composed by *two* modules:
 
 * **englo-portal** ~ the demo portal with everything installed 
 * **englo-entando-components** ~ this is the fork of the components project with the newly created plugin, ready to be merged back in GitHub
 
-#Installation
+See the following web site: http://saberc.github.io/EngloSite.github.io.
 
-* install the Entando **core** v4.2-TP1 from [this page](https://github.com/entando/entando-core)
-* from the **components** folder install everything with the following command **mvn install -DskipTests**
-
-Upon completion the **englo-entando-englo-portal** portal can be run using either Tomcat or Jetty. 
+**Note**: we are prepaing the wiki pages, so stay tuned!!!
