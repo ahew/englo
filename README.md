@@ -1,6 +1,6 @@
 # Englo - A Software Project Management and Delivery Tool
 
-Englo is a composite application prototype, to manage and delivery software projects.
+**Englo** is a composite application prototype, to manage and delivery software projects.
 
 It is composed by *two* modules:
 
