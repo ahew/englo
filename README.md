@@ -16,7 +16,7 @@ For installation see [Getting Started] (http://entando.github.io/englo).
   * Sign in with your Basecamp ID in the following link [https://integrate.37signals.com/]   (https://integrate.37signals.com/);
   * Create your Basecamp Application characterised by: _Name of your application_, _Your company's name_, _Your website URL_.   * Integrate your Application with Basecamp and Basecamp Classic;
   * Manage OAuth 2 authorization redirecting  URI as [http://localhost:8080/englo/do/authentication/access] (http://localhost:8080/englo/do/authentication/access);
-  * Generate Basecamp Application characterised by the Client ID and Client Secret;
+  * Generate Basecamp Application characterised by the _Client ID_ and _Client Secret_;
   * Configure Basecamp plugin in the _Basecamp Configuration_ page of the Entando's Back Office, using _Client ID_ for setting _Application ID_, _Client Secret_ for _Application secret_, your username and password used to access in Basecamp, and using Subscription account number;
   * Click _Test configuration_; if the Test configuration is successfully verified, you can click on _Save_ button
 
@@ -25,9 +25,9 @@ For installation see [Getting Started] (http://entando.github.io/englo).
   * Log in to Trello and create a new Team, a new related Board, set the name of the organization (put in lowercase letters  and without white space);
   * Access to the following link: [https://developers.trello.com/get-started] (https://developers.trello.com/get-started);
   * Click on _Get your Application Key_. A key and a Secret codes are generated.
-  * Configure the Trello Configuration page in Entando's back office. You have to set: _jptrello.label.apiKey_ with the _key_  code, _jptrello.label.apiSecret_ with the _Secret_ code, _jptrello.label.organization_ with the _organization's name_.
+  * Configure the Trello Configuration page in Entando's back office. You have to set: _apiKey_ with the _key_  code, _apiSecret_ with the _Secret_ code, _organization_ with the _organization's name_.
   * Make the following request https://trello.com/1/authorize?key=my_app_key&name=my_app_name&expiration=never&response_type=token&scope=read,write to generate your Token, using your Browser.
-  * Click _Test configuration_; if the Test configuration is successfully verified, you can click on _Save_ button.
+  * Click _Test configuration_; if the _Test configuration_ is successfully verified, you can click on _Save_ button.
 
 * **Github Configuration**
 
