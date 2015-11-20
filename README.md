@@ -9,7 +9,7 @@ It is composed by *two* modules:
 
 For installation see [Getting Started] (http://entando.github.io/englo).
 
-**In order to join with Englo, you have to configure all newly installed components, in the Entando's back office**:
+**In order to join with Englo, you have to configure all installed components, in the Entando's back office**:
 
 * **Basecamp Configuration**
   * Sign in Basecamp;
