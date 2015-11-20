@@ -14,8 +14,10 @@ For installation see [Getting Started] (http://entando.github.io/englo).
 * **Basecamp Configuration**
   * Sign in Basecamp;
   * Sign in with your Basecamp ID in the following link [https://integrate.37signals.com/]   (https://integrate.37signals.com/);
-  * Create your Basecamp Application characterised by the Client ID and Client Secret.
-  * Configure Basecamp plugin in the _Basecamp Configuration_ page of the Entando's Back Office, using _Client ID_ for setting _Application ID_, _Client Secret_ for _Application secret_, your username and password used to access in Basecamp, and using Subscription account number.
+  * Create your Basecamp Application characterised by: _Name of your application_, _Your company's name_, _Your website URL_.   * Integrate your Application with Basecamp and Basecamp Classic;
+  * Manage OAuth 2 authorization redirecting  URI as [http://localhost:8080/englo/do/authentication/access] (http://localhost:8080/englo/do/authentication/access);
+  * Generate Basecamp Application characterised by the Client ID and Client Secret;
+  * Configure Basecamp plugin in the _Basecamp Configuration_ page of the Entando's Back Office, using _Client ID_ for setting _Application ID_, _Client Secret_ for _Application secret_, your username and password used to access in Basecamp, and using Subscription account number;
   * Click _Test configuration_; if the Test configuration is successfully verified, you can click on _Save_ button
 
 * **Trello Configuration**
