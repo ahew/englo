@@ -26,7 +26,7 @@ For installation see [Getting Started] (http://entando.github.io/englo).
   * Access to the following link: [https://developers.trello.com/get-started] (https://developers.trello.com/get-started);
   * Click on _Get your Application Key_. A key and a Secret codes are generated.
   * Configure the Trello Configuration page in Entando's back office. You have to set: _jptrello.label.apiKey_ with the _key_  code, _jptrello.label.apiSecret_ with the _Secret_ code, _jptrello.label.organization_ with the _organization's name_.
-  * Make the following request "https://trello.com/1/authorize?key=<my_app_key>&name=<my_app_name>&expiration=never&response_type=token&scope=read,write" to generate your Token, using your Browser.
+  * Make the following request (https://trello.com/1/authorize?key)=my_app_key&name=my_app_name&expiration=never&response_type=token&scope=read,write to generate your Token, using your Browser.
   * Click _Test configuration_; if the Test configuration is successfully verified, you can click on _Save_ button.
 
 * **Github Configuration**
