@@ -13,8 +13,8 @@ For installation see [Getting Started] (http://entando.github.io/englo).
   * Sign in Basecamp;
   * Sign in with your Basecamp ID in the following link [https://integrate.37signals.com/]   (https://integrate.37signals.com/);
   * Create your Basecamp Application characterised by the Client ID and Client Secret.
-   * Configure Basecamp plugin in the _Basecamp Configuration_ page of the Entando's Back Office, using _Client ID_ for setting _Application ID_, _Client Secret_ for _Application secret_, your username and password used to access in Basecamp, and using Subscription account number.
-* Click _Test configuration_; if the Test configuration is successfully verified, you can click on _Save_ button
+  * Configure Basecamp plugin in the _Basecamp Configuration_ page of the Entando's Back Office, using _Client ID_ for setting _Application ID_, _Client Secret_ for _Application secret_, your username and password used to access in Basecamp, and using Subscription account number.
+  * Click _Test configuration_; if the Test configuration is successfully verified, you can click on _Save_ button
 
 * **Trello Configuration**
 
