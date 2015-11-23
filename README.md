@@ -36,14 +36,14 @@ For installation see [Getting Started] (http://entando.github.io/englo).
 
 * **Jenkins Configuration**
 
-* Login on Jenkins
-* Go to the Jenkins Manager and click on User Manager
-  * Create a User;
-  * Go into user details, after that the user is created;
-  * Click the button: _Show API token_
-* Go to the Jenkins Configuration page in the Entando back office
-  *  Set _username_ and _password_, the same used to access in Jenkins
-  *  Set the _Authentication token_ and _Jenkins URL_
+ * Login on Jenkins
+   * Go to the Jenkins Manager and click on User Manager
+   * Create a User;
+   * Go into user details, after that the user is created;
+   * Click the button: _Show API token_
+ * Go to the Jenkins Configuration page in the Entando back office
+   *  Set _username_ and _password_, the same used to access in Jenkins
+   *  Set the _Authentication token_ and _Jenkins URL_
   
 
 
