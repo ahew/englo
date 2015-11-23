@@ -34,4 +34,17 @@ For installation see [Getting Started] (http://entando.github.io/englo).
   * Set _username_ and _password_, the same used to access in Github platform, to configure Github Configuration page in Entando's back Office.
   * Click _Test configuration_; if the Test configuration is successfully verified, you can click on _Save_ button.
 
+* **Jenkins Configuration**
+
+* Login on Jenkins
+* Go to the Jenkins Manager and click on User Manager
+  * Create a User;
+  * Go into user details, after that the user is created;
+  * Click the button: _Show API token_
+* Go to the Jenkins Configuration page in the Entando back office
+  *  Set _username_ and _password_, the same used to access in Jenkins
+  *  Set the _Authentication token_ and _Jenkins URL_
+  
+
+
 **Note**: we are preparing the wiki pages, so stay tuned!!!
