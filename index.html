@@ -162,6 +162,28 @@ This web application is developed by using Struts2 that is used for back-end (st
 <p>A Result example is like this:</p>
 
 <pre><code>{
+  "boards": [
+    {
+      "name": "board1",
+      "id": "56196ccede7b2cfe172b94ed"
+    },
+    {
+      "name": "board2",
+      "id": "56196ccede7b2cfe172b94ee"
+    },
+    {
+      "name": "board3",
+      "id": "56196ccede7b2cfe172b94ef"
+    }
+  ]
+}
+</code></pre>
+
+<hr>
+
+<p>Details of Board1:</p>
+
+<pre><code>{
   "list": [
     {
       "name": "To Do",
@@ -181,6 +203,50 @@ This web application is developed by using Struts2 that is used for back-end (st
 
 <h3>
 <a id="entando-trello-rest-apis-angular-js-combination" class="anchor" href="#entando-trello-rest-apis-angular-js-combination" aria-hidden="true"><span class="octicon octicon-link"></span></a>Entando-Trello: REST APIs-Angular JS combination</h3>
+
+<p>REST API file.xml -&gt; apiMethods</p>
+
+<pre><code>&lt;responseClass&gt;org.entando.entando.plugins.jptrello.aps.system.services.trello.api.BoardListResponse&lt;/responseClass&gt;
+&lt;resource name="boards" namespace="trello"&gt;
+&lt;description&gt;Return the boards&lt;/description&gt;
+&lt;source&gt;trello&lt;/source&gt;
+    &lt;method httpMethod="GET" active="true" canSpawnOthers="false"&gt;
+        &lt;source&gt;trello&lt;/source&gt;
+        &lt;description&gt;Return boards by holder&lt;/description&gt;
+        &lt;springBean name="jptrelloTrelloBoardEndpoint" method="boardsList" /&gt;
+         &lt;responseClass&gt;org.entando.entando.plugins.jptrello.aps.system.services.trello.api.BoardListResponse&lt;/responseClass&gt;
+        &lt;/method&gt;
+ &lt;/resource&gt;
+</code></pre>
+
+<p>Angular JS Request:</p>
+
+<pre><code> $http.get("http://localhost:8080/englo/api/rs/en/trello/boards").success(function(data) {
+        var json = JSON.parse(JSON.stringify(data));
+        $scope.boards=json.boards;
+    });
+</code></pre>
+
+<p>The Result of the Request is a JSON:</p>
+
+<pre><code>{
+  "boards": [
+    {
+      "name": "board1",
+      "id": "56196ccede7b2cfe172b5f6g"
+    },
+    {
+      "name": "board2",
+      "id": "56196ccede7b2cfe175f6f"
+    },
+    {
+      "name": "board3",
+      "id": "56196ccede7b2cfe1725f6e"
+    }
+  ]
+}
+
+</code></pre>
         </section>
 
         <footer>
