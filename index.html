@@ -181,7 +181,7 @@ This web application is developed by using Struts2 that is used for back-end (st
 
 <hr>
 
-<p>Details of Board1:</p>
+<p>Detail of Board1:</p>
 
 <pre><code>{
   "list": [
@@ -204,6 +204,8 @@ This web application is developed by using Struts2 that is used for back-end (st
 <h3>
 <a id="entando-trello-rest-apis-angular-js-combination" class="anchor" href="#entando-trello-rest-apis-angular-js-combination" aria-hidden="true"><span class="octicon octicon-link"></span></a>Entando-Trello: REST APIs-Angular JS combination</h3>
 
+<p><strong>Example: Angular JS Request of Boards List</strong></p>
+
 <p>In the <code>apiMethods</code> file you can find REST API:</p>
 
 <pre><code>&lt;responseClass&gt;org.entando.entando.plugins.jptrello.aps.system.services.trello.api.BoardListResponse&lt;/responseClass&gt;
@@ -221,7 +223,7 @@ This web application is developed by using Struts2 that is used for back-end (st
 
 <hr>
 
-<p>Angular JS Request is:</p>
+<p>Angular JS Request:</p>
 
 <pre><code> $http.get("http://localhost:8080/englo/api/rs/en/trello/boards").success(function(data){
         $scope.boards=data.boards;
@@ -230,7 +232,7 @@ This web application is developed by using Struts2 that is used for back-end (st
 
 <hr>
 
-<p>The Result of the Request is a JSON:</p>
+<p>The Jason Result of the Request:</p>
 
 <pre><code>{
   "boards": [
